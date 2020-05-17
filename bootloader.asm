@@ -1,4 +1,4 @@
-; RisitOS Bootloader Work in Progress / provided under MIT Licence 
+; RisitOS Bootloader  / provided under MIT Licence 
 
 ; Based on a free boot loader by E Dehling. Boot then scan FAT12 floppy for KHEYRNEL.BIN, then loads it and executes it
 
