@@ -17,13 +17,14 @@ LDFLAGS=-nostdlib -g -lgcc -ffreestanding -shared
 clean:
 	rm -fv kernel/*.o
 	rm -fv kheynel.bin
+	rm -fv boot/boot.o
 
 build: kheynel.bin
 
-kheynel.bin: kernel/boot.o kernel/kernel.o
+kheynel.bin: boot/boot.o kernel/kernel.o
 	$(LD) $(LDFLAGS) -T kernel/linker.ld $^ -o $@
 
-kernel/boot.o: kernel/boot.asm
+boot/boot.o: boot/boot.asm
 	$(AS) $(ASFLAGS) $< -o $@
 
 kernel/%.o: kernel/%.c
